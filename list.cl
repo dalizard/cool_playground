@@ -31,12 +31,14 @@ class Main inherits IO {
   main(): Object {
     let hello: String <- "Hello ",
         world: String <- "world!",
+        i: Int <- 12,
         newline: String <- "\n",
         nil: List,
         list: List <-
               (new List).init(hello,
                 (new List).init(world,
-                  (new List).init(newline, nil)))
+                  (new List).init(i,
+                    (new List).init(newline, nil))))
     in
         out_string(list.flatten())
   };
